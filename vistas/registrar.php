@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 	<style type="text/css">
@@ -20,13 +21,12 @@
 	</style>
 	<div class="container">
 		<div class="row center">
-			<div id="registro" class="col-md-6">
+			<div class="col-md-6">
 		  		<h2>Registro Consultores</h2>
 		  		<form  id="formulario" name="formulario" action="" method="POST">
 					<div class="form-group">
 						<strong>Consultor</strong>
-						<input type="hidden" id="idconsultor" name="idconsultor">
-						<input type="text" class="form-control" id=nombre" placeholder="Ingrese Consultor" name=nombre">
+						<input type="text" class="form-control" id="nombre" placeholder=" Ingrese Nombre" name="nombre">
 					</div>
 					<div class="form-group">
 						<strong>Documento</strong>

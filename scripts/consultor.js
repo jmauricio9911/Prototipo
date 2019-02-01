@@ -10,7 +10,7 @@ function init(){
 //Funcion limpiar
 function limpiar(){
 	$("#idconsultor").val("");
-	$("#consultor").val("");
+	$("#nombre").val("");
 	$("#documento").val("");
 	$("#linea").val("");
 }
@@ -28,7 +28,9 @@ function guardarEditar(e){
 		processData: false,
 
 		success: function(datos){
-			bootbox.alert(datos);
+			//bootbox.alert
+
+			swal("Buen Trabajo",datos,"success");
 		}
 	});
 	limpiar();

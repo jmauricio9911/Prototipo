@@ -25,6 +25,10 @@
 			return ejecutarConsulta($sql);
 		}
 
+		public function login($documento){
+			$sql = "SELECT * FROM consultor WHERE documento='documento'";
+		}
+
 
 	}
 

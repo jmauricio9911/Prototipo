@@ -8,9 +8,8 @@
 	$nombre=isset($_POST["nombre"])?limpiarCadena($_POST["nombre"]):"";
 	$documento=isset($_POST["documento"])?limpiarCadena($_POST["documento"]):"";
 	$linea=isset($_POST["linea"])?limpiarCadena($_POST["linea"]):"";
-	echo $nombre, $documento, $linea;
-	/*
-	switch ($_GET["opt"]) {
+   
+	switch ($_GET["opt"]){
 		case 'guardarEditar':
 			if (empty($idconsultor)) {
 				$rspta = $consultor->insertar($nombre,$documento,$linea);
@@ -21,7 +20,7 @@
 			}
 			break;
 		case 'mostrar':
-				$rspta=$consultor->mostrar($idconsultor);
+				$rspta=$consultor->login($idconsultor);
 				echo json_encode($rspta);
 			break;
 		case 'listar':
@@ -46,5 +45,5 @@
 		default:
 			# code...
 			break;
-	}*/
+	}
  ?>
