@@ -3,12 +3,13 @@
 	require_once "../modelo/guardar.php";
 
 	$consultor = new Consultor();
-
+	//Registro de consutor
 	$idconsultor=isset($_POST["idconsultor"])? limpiarCadena($_POST["idconsultor"]):"";
 	$nombre=isset($_POST["nombre"])?limpiarCadena($_POST["nombre"]):"";
 	$documento=isset($_POST["documento"])?limpiarCadena($_POST["documento"]):"";
 	$linea=isset($_POST["linea"])?limpiarCadena($_POST["linea"]):"";
-   
+
+
 	switch ($_GET["opt"]){
 		case 'guardarEditar':
 			if (empty($idconsultor)) {
@@ -20,7 +21,7 @@
 			}
 			break;
 		case 'mostrar':
-				$rspta=$consultor->login($idconsultor);
+				$rspta=$consultor->login($documento);
 				echo json_encode($rspta);
 			break;
 		case 'listar':
@@ -42,6 +43,9 @@
 				);
 				echo json_encode($results);
 			break;
+			case 'guardarRegistro':
+					$rspta = $consultor->insertarR($cliente,$categoria,$proyecto,$fechaini,$fechafin);
+					echo $rspta ? "Registrado Correctamente" : "Error al Registrar";
 		default:
 			# code...
 			break;

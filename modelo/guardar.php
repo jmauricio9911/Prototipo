@@ -9,7 +9,7 @@
 		}
 		//Metodo para Ingresar registros
 		public function insertar($nombre,$documento,$linea){
-			$sql="INSERT INTO consultor(consultor,documento,linea) VALUES ('$nombre','$documento','$linea')";
+			$sql="INSERT INTO consultor(consultor,documento,linea,proyecto) VALUES ('$nombre','$documento','$linea','0')";
 			//llamos el metodo ejecutarConsulta
 			return ejecutarConsulta($sql);
 		}
@@ -27,6 +27,7 @@
 
 		public function login($documento){
 			$sql = "SELECT * FROM consultor WHERE documento='documento'";
+			return ejecutarConsultaSimpleFila($sql);
 		}
 
 

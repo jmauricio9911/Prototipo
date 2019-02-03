@@ -18,6 +18,12 @@
 			return $query;
 		}
 
+		function miltiquery($sql){
+			$conexion = new mysqli(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+			$query = mysqli_multi_query($conexion,$sql);
+			return $query;
+		}
+
 		function ejecutarConsultaSimpleFila($sql){
 			global $conexion;
 			$query = $conexion->query($sql);
